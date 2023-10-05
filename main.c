@@ -90,7 +90,6 @@ int main()
                             printf("[6] Porta-Avioes\n");
                             printf("[7] Voltar\n"); // Volta para o menu principal (reseta o jogo).
                             printf("[8] Finalizar o jogo\n");
-
                             scanf("%d",&opcao);
                             if(opcao==7){
                                 voltar_sair=1;       // Aqui todas as variáveis resetam para que o jogo recomece.
