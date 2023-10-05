@@ -657,7 +657,7 @@ int main()
                             printf("Obrigado por jogar!\n");
                             return 0;
                             break;
-                        case 9:
+                        case 9: // Case da opção aleatorizar.
                             do{ // Sortear boias aleatoriamente
                                 linha = rand()%20; // Sortear linha
                                 coluna = rand()%20; // Sortear coluna
