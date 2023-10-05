@@ -118,7 +118,7 @@ int main()
                                         coluna = m;
                                     }
                                 }
-                                if(linha>19 || coluna > 19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
                                     printf("Linha e/ou Coluna invalida. Tente novamente.\n");
                                 }
                                 if(boia==BOMAX){
@@ -133,7 +133,7 @@ int main()
                                         boia++;
                                     }
                                 }
-                            }while(linha>19 || coluna > 19 || linha<0 || coluna<0);
+                            }while(linha>19 || coluna>19 || linha<0 || coluna<0);
                         break;
 
                         case 2: // Avião.
@@ -163,7 +163,7 @@ int main()
                                         coluna = m;
                                     }
                                 }
-                                if(linha>19 || coluna >19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
                                     printf("\n");
                                     printf("Linha e/ou Coluna invalida. Tente novamente.\n");
                                 }
