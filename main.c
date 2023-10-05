@@ -18,7 +18,7 @@ int main()
     // O código não está perfeito, possui probleminhas aqui e ali que não consegui resolver (Me perdi um pouco com os laços condicionais e estruturas de repetição).
     // A inicialização dos elementos pode parecer um pouco complicada a princípio (Recomendado ver as instruções). Tentei explicar como fazer, recomendo printar no centro da matriz para testar.
 
-    int menu,voltar_sair,finalizar,opcao,virar,voltar_sair2 = 0;
+    int menu,voltar_sair,finalizar,opcao,virar,voltar_sair2 = 0,voltar_sair3 = 0;
     char matriz_menu[TAM][TAM]; // Matriz usada nas instruções.
     char vet[TAM][TAM];
     char letra[TAM] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T'}; // Usado para indicar a coluna.
@@ -85,7 +85,21 @@ int main()
                         printf("Espiao 1 [%d]\n",espiao_1);
                         printf("Espiao 2 [%d]\n",espiao_2);
                         printf("Porta-aviao [%d]\n",porta_avioes);
-                        return 0;
+                        printf("\n");
+                        printf("Jogar novamente?\n");
+                        printf("[1] Sim\n");
+                        printf("[2] Nao\n");
+                        scanf("%d",&voltar_sair3);
+                        if(voltar_sair3==1){
+                            voltar_sair=1;       // Aqui todas as variáveis resetam para que o jogo recomece.
+                            voltar_sair2=1;
+                            boia = 0, aviao = 0, submarino = 0, espiao_1 = 0, espiao_2 = 0, porta_avioes = 0;
+                            break;
+                        }
+                        else{
+                            printf("Obrigado por jogar!\n");
+                            return 0;
+                        }
                     }
                     do{
                         do{
