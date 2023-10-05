@@ -679,7 +679,6 @@ int main()
                                 if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
                                     }
                                     if(boia==BOMAX){
-                                        printf("Quantidade maxima de Boias atingida.\n"); // Limitar a quantidade.
                                     }
                                     else if(linha>=0 && linha<TAM && coluna>=0 && coluna<TAM){
                                         if(vet[linha][coluna] != '*'){ // Condição para impedir sobreposição.
@@ -699,7 +698,6 @@ int main()
                                 if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
                                 }
                                 if(aviao==AVMAX){
-                                    printf("Quantidade maxima de Avioes atingida.\n"); // Limitar a quantidade.
                                 }
                                 else{
                                     switch(virar){ // switch case para rotação do elemento.
@@ -778,7 +776,6 @@ int main()
                                 if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
                                 }
                                 if(submarino==SUMAX){
-                                    printf("Quantidade maxima de Submarinos atingida.\n"); // Limitar a quantidade.
                                 }
                                 else{
                                     switch(virar){
@@ -825,7 +822,6 @@ int main()
                                 if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapaassar a matriz.
                                 }
                                 if(espiao_1==E1MAX){
-                                    printf("Quantidade maxima de Espioes 1 atingida.\n"); // Limitar a quantidade.
                                 }
 
                                 else{
@@ -913,7 +909,6 @@ int main()
                                 if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapaassar a matriz.
                                 }
                                 if(espiao_2==E2MAX){
-                                    printf("Quantidade maxima de Espioes 2 atingida.\n"); // Limitar a quantidade.
                                 }
 
                                 else{
@@ -1000,7 +995,6 @@ int main()
                                 if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
                                 }
                                 if(submarino==PAMAX){
-                                    printf("Quantidade maxima de Porta-avioes atingida.\n"); // Limitar a quantidade.
                                 }
                                 else{
                                     switch(virar){
