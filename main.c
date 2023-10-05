@@ -10,20 +10,21 @@
 
 int main()
 {
-    // Bem vindo ao meu código. Trabalho (parte 1) da disciplina de algoritmos.
-    // Tentei comentar o máximo que deu, se não estiver comentado foi porque esqueci ou não achei necessário.
-    // Ficou um pouco grande pois não sei ainda usar algumas funcionalidades da linguagem C. São 920 linhas de puro amor.
-    // Adicionei coisas a mais no código, mas os requerimentos foram cumpridos.
-    // O código não está perfeito, possui probleminhas aqui e ali que não consegui resolver (Me perdi um pouco com os laços condicionais e estruturas de repetição).
+    // Bem vindo ao meu cÃ³digo. Trabalho (parte 1) da disciplina de algoritmos.
+    // Tentei comentar o mÃ¡ximo que deu, se nÃ£o estiver comentado foi porque esqueci ou nÃ£o achei necessÃ¡rio.
+    // Ficou um pouco grande pois nÃ£o sei ainda usar algumas funcionalidades da linguagem C. SÃ£o 920 linhas de puro amor.
+    // Adicionei coisas a mais no cÃ³digo, mas os requerimentos foram cumpridos.
+    // O cÃ³digo nÃ£o estÃ¡ perfeito, possui probleminhas aqui e ali que nÃ£o consegui resolver (Me perdi um pouco com os laÃ§os condicionais e estruturas de repetiÃ§Ã£o).
+    // A inicializaÃ§Ã£o dos elementos pode parecer um pouco complicada a princÃ­pio (Recomendado ver as instruÃ§Ãµes). Tentei explicar como fazer, recomendo printar no centro da matriz para testar.
 
     int menu,voltar_sair,finalizar,opcao,virar,voltar_sair2 = 0;
-    char matriz_menu[TAM][TAM]; // Matriz usada nas instruções.
+    char matriz_menu[TAM][TAM]; // Matriz usada nas instruÃ§Ãµes.
     char vet[TAM][TAM];
     char letra[TAM] = {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T'}; // Usado para indicar a coluna.
     int i,j,k,l,m;
-    int linha;   // Adicionei as variáveis 'linha' e 'coluna' pra não ter conflito com a 'i' e 'j'.
+    int linha;   // Adicionei as variÃ¡veis 'linha' e 'coluna' pra nÃ£o ter conflito com a 'i' e 'j'.
     char coluna;
-    int boia = 0, aviao = 0, submarino = 0, espiao_1 = 0, espiao_2 = 0, porta_avioes = 0; // Variavél de cada elemento.
+    int boia = 0, aviao = 0, submarino = 0, espiao_1 = 0, espiao_2 = 0, porta_avioes = 0; // VariavÃ©l de cada elemento.
 
     do{
         do{
@@ -31,7 +32,7 @@ int main()
             printf("Trabalho de Algoritmos.\nBatalha Naval.\n\n");  // Menu.
             printf("------------------\n");
             printf("[1] Jogar\n");
-            printf("[2] Instrucoes\n"); // Menu de instruções. Feito apenas por diversão :)
+            printf("[2] Instrucoes (Recomendado)\n"); // Menu de instruÃ§Ãµes. Feito apenas por diversÃ£o :)
             printf("[3] Sair\n------------------\n");
             printf("Feito por Matheus Vinicius.\n\n");
             scanf("%d",&menu);
@@ -42,7 +43,7 @@ int main()
 
             case 1:
                 for(i=0; i<TAM; i++){
-                    for(j = 0; j<TAM; j++){  // Inicializa a matriz com todas as posições como '*'.
+                    for(j = 0; j<TAM; j++){  // Inicializa a matriz com todas as posiÃ§Ãµes como '*'.
                         vet[i][j] = '*';
                     }
                 }
@@ -55,14 +56,14 @@ int main()
                     printf("   ");
 
                     while(k<=84){
-                        printf("%c ",k); // Imprime a primeira linha com letras de A-T (com uso da tabela ASCII) para identificação de cada posição y. (Poderia ter usado o vetor 'letra' mas decidi manter assim).
+                        printf("%c ",k); // Imprime a primeira linha com letras de A-T (com uso da tabela ASCII) para identificaÃ§Ã£o de cada posiÃ§Ã£o y. (Poderia ter usado o vetor 'letra' mas decidi manter assim).
                         k++;
                     }
                     printf("\n");
 
                     for(i=0; i<TAM; i++){
                         printf("%d",l);
-                        l++; // Imprime a primeira coluna com números de 0-19 para identificação de cada posição x.
+                        l++; // Imprime a primeira coluna com nÃºmeros de 0-19 para identificaÃ§Ã£o de cada posiÃ§Ã£o x.
                         if(l<=10){
                             printf(" ");
                         }
@@ -72,7 +73,7 @@ int main()
                             }
                     printf("\n");
                     }
-                    if(boia == BOMAX && aviao == AVMAX && submarino == SUMAX && espiao_1 == E1MAX && espiao_2 == E2MAX && porta_avioes == PAMAX){ // Condição de parada do loop.
+                    if(boia == BOMAX && aviao == AVMAX && submarino == SUMAX && espiao_1 == E1MAX && espiao_2 == E2MAX && porta_avioes == PAMAX){ // CondiÃ§Ã£o de parada do loop.
                         printf("\n");
                         printf("A Frota maritima foi posicinada com sucesso!\n");
                         return 0;
@@ -83,7 +84,7 @@ int main()
                             printf("Escolha uma opcao:\n");
                             printf("[1] Boia\n");
                             printf("[2] Aviao\n");
-                            printf("[3] Submarino\n");     // Opções (com condições e loops).
+                            printf("[3] Submarino\n");     // OpÃ§Ãµes (com condiÃ§Ãµes e loops).
                             printf("[4] Espiao 1\n");
                             printf("[5] Espiao 2\n");
                             printf("[6] Porta-Avioes\n");
@@ -92,7 +93,7 @@ int main()
 
                             scanf("%d",&opcao);
                             if(opcao==7){
-                                voltar_sair=1;       // Aqui todas as variáveis resetam para que o jogo recomece.
+                                voltar_sair=1;       // Aqui todas as variÃ¡veis resetam para que o jogo recomece.
                                 voltar_sair2=1;
                                 boia = 0, aviao = 0, submarino = 0, espiao_1 = 0, espiao_2 = 0, porta_avioes = 0;
                             }
@@ -102,44 +103,44 @@ int main()
                                 printf("Opcao invalida. Tente novamente.\n");
                             }
                         }while(opcao<1||opcao>8);
-                        virar = 0; // resetar a variável 'virar'
+                        virar = 0; // resetar a variÃ¡vel 'virar'
                     }while(virar==5 || virar==3);
 
                     printf("\n");
 
-                    switch(opcao){ // switch-case da opção escolhida pelo usuário.
+                    switch(opcao){ // switch-case da opÃ§Ã£o escolhida pelo usuÃ¡rio.
                         case 1:  // Boia.
-                            do{ // Laço de repetição.
+                            do{ // LaÃ§o de repetiÃ§Ã£o.
                                 printf("Digite a linha e coluna para adicionar a Boia: ");
                                 scanf("%d %c",&linha,&coluna);
                                 for(m=0; m<TAM; m++){
-                                    if(coluna==letra[m]){ // Conversão dos valores do vetor letra para valores inteiros (facilita a indicação da coluna).
+                                    if(coluna==letra[m]){ // ConversÃ£o dos valores do vetor letra para valores inteiros (facilita a indicaÃ§Ã£o da coluna).
                                         coluna = m;
                                     }
                                 }
-                                if(linha>19 || coluna > 19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                if(linha>19 || coluna > 19 || linha<0 || coluna<0){ // CondiÃ§Ã£o para nÃ£o ultrapassar a matriz.
                                     printf("Linha e/ou Coluna invalida. Tente novamente.\n");
                                 }
                                 if(boia==BOMAX){
                                     printf("Quantidade maxima de Boias atingida.\n"); // Limitar a quantidade.
                                 }
                                 else if(linha>=0 && linha<TAM && coluna>=0 && coluna<TAM){
-                                    if(vet[linha][coluna] != '*'){ // Condição para impedir sobreposição.
+                                    if(vet[linha][coluna] != '*'){ // CondiÃ§Ã£o para impedir sobreposiÃ§Ã£o.
                                         printf("Posicao Invalida. Posicao ja possui um elemento.\n");
                                 }
                                     else{
-                                        vet[linha][coluna] = '0';   // Imprime a posição da boia na posição (x,y) escolhida pelo usuário.
+                                        vet[linha][coluna] = '0';   // Imprime a posiÃ§Ã£o da boia na posiÃ§Ã£o (x,y) escolhida pelo usuÃ¡rio.
                                         boia++;
                                     }
                                 }
                             }while(linha>19 || coluna > 19 || linha<0 || coluna<0);
                         break;
 
-                        case 2: // Avião.
-                            do{ // Laço de repetição.
+                        case 2: // AviÃ£o.
+                            do{ // LaÃ§o de repetiÃ§Ã£o.
                                 printf("Escolha como sera o posicionamento do Aviao:\n");
                                 printf("[1] Padrao\n");
-                                printf("[2] Rotacionar 90 graus para a direita\n");     // Opções para virar o elemento.
+                                printf("[2] Rotacionar 90 graus para a direita\n");     // OpÃ§Ãµes para virar o elemento.
                                 printf("[3] Rotacionar 90 graus para a esquerda\n");
                                 printf("[4] Rotacionar 180 graus\n");
                                 printf("[5] Voltar\n");
@@ -154,15 +155,15 @@ int main()
                                 break;
                             }
 
-                            do{ // Laço de repetição.
+                            do{ // LaÃ§o de repetiÃ§Ã£o.
                                 printf("Digite a linha e coluna para adicionar o Aviao: ");
                                 scanf("%d %c",&linha,&coluna);
                                 for(m=0; m<TAM; m++){
-                                    if(coluna==letra[m]){ // Conversão dos valores do vetor 'letra' para valores inteiros (facilita a indicação da coluna).
+                                    if(coluna==letra[m]){ // ConversÃ£o dos valores do vetor 'letra' para valores inteiros (facilita a indicaÃ§Ã£o da coluna).
                                         coluna = m;
                                     }
                                 }
-                                if(linha>19 || coluna >19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                if(linha>19 || coluna >19 || linha<0 || coluna<0){ // CondiÃ§Ã£o para nÃ£o ultrapassar a matriz.
                                     printf("\n");
                                     printf("Linha e/ou Coluna invalida. Tente novamente.\n");
                                 }
@@ -170,54 +171,54 @@ int main()
                                     printf("Quantidade maxima de Avioes atingida.\n"); // Limitar a quantidade.
                                 }
                                 else{
-                                    switch(virar){ // switch case para rotação do elemento.
-                                        case 1: // Opcão padrão:
-                                            if(linha<1 || linha>18 || coluna>18){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                    switch(virar){ // switch case para rotaÃ§Ã£o do elemento.
+                                        case 1: // OpcÃ£o padrÃ£o:
+                                            if(linha<1 || linha>18 || coluna>18){ // CondiÃ§Ã£o que lÃª se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
-                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha+1][coluna+1] != '*' || vet[linha-1][coluna+1] != '*'){ // Verifica se há algum elemento na posição.
+                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha+1][coluna+1] != '*' || vet[linha-1][coluna+1] != '*'){ // Verifica se hÃ¡ algum elemento na posiÃ§Ã£o.
                                                     printf("Posicao Invalida. Posicao ja possui um elemento.\n");
                                                 }
                                                 else{
                                                     vet[linha][coluna] = '1';
                                                     vet[linha][coluna+1] = '1';
-                                                    vet[linha+1][coluna+1] = '1';    // Imprime as posições do avião a partir da posição (x,y) inicializada.
+                                                    vet[linha+1][coluna+1] = '1';    // Imprime as posiÃ§Ãµes do aviÃ£o a partir da posiÃ§Ã£o (x,y) inicializada.
                                                     vet[linha-1][coluna+1] = '1';
                                                     aviao++;
                                                     }
                                             }
                                         break;
 
-                                        case 2: // Opção virar 90° para a direita:
-                                            if(linha<1 || linha>19 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                        case 2: // OpÃ§Ã£o virar 90Â° para a direita:
+                                            if(linha<1 || linha>19 || coluna>17){ // CondiÃ§Ã£o que lÃª se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
-                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha-1][coluna+1] != '*' || vet[linha][coluna+2] != '*'){ // Verifica se há algum elemento na posição.
+                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha-1][coluna+1] != '*' || vet[linha][coluna+2] != '*'){ // Verifica se hÃ¡ algum elemento na posiÃ§Ã£o.
                                                     printf("Posicao Invalida. Posicao ja possui um elemento.\n");
                                                 }
                                                 else{
                                                     vet[linha][coluna] = '1';
                                                     vet[linha][coluna+1] = '1';
-                                                    vet[linha-1][coluna+1] = '1';    // Imprime as posições do avião a partir da posição (x,y) inicializada.
+                                                    vet[linha-1][coluna+1] = '1';    // Imprime as posiÃ§Ãµes do aviÃ£o a partir da posiÃ§Ã£o (x,y) inicializada.
                                                     vet[linha][coluna+2] = '1';
                                                     aviao++;
                                                 }
                                             }
                                         break;
 
-                                        case 3: // Opção virar 90° para a esquerda:
-                                            if(linha>18 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                        case 3: // OpÃ§Ã£o virar 90Â° para a esquerda:
+                                            if(linha>18 || coluna>17){ // CondiÃ§Ã£o que lÃª se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
-                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha+1][coluna+1] != '*'){ // Verifica se há algum elemento na posição.
+                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha+1][coluna+1] != '*'){ // Verifica se hÃ¡ algum elemento na posiÃ§Ã£o.
                                                     printf("Posicao Invalida. Posicao ja possui um elemento.\n");
                                                 }
                                                 else{
                                                     vet[linha][coluna] = '1';
-                                                    vet[linha][coluna+1] = '1';   // Imprime as posições do avião a partir da posição (x,y) inicializada.
+                                                    vet[linha][coluna+1] = '1';   // Imprime as posiÃ§Ãµes do aviÃ£o a partir da posiÃ§Ã£o (x,y) inicializada.
                                                     vet[linha][coluna+2] = '1';
                                                     vet[linha+1][coluna+1] = '1';
                                                     aviao++;
@@ -225,18 +226,18 @@ int main()
                                             }
                                         break;
 
-                                        case 4: // Opcao virar 180°
-                                            if(linha<1 || linha>18   || coluna>18){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                        case 4: // Opcao virar 180Â°
+                                            if(linha<1 || linha>18   || coluna>18){ // CondiÃ§Ã£o que lÃª se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
-                                                if(vet[linha][coluna] != '*' || vet[linha+1][coluna] != '*' || vet[linha-1][coluna] != '*' || vet[linha][coluna+1] != '*'){  // Verifica se há algum elemento na posição.
+                                                if(vet[linha][coluna] != '*' || vet[linha+1][coluna] != '*' || vet[linha-1][coluna] != '*' || vet[linha][coluna+1] != '*'){  // Verifica se hÃ¡ algum elemento na posiÃ§Ã£o.
                                                     printf("Posicao Invalida. Posicao ja possui um elemento.\n");
                                                 }
                                                 else{
                                                     vet[linha][coluna] = '1';
                                                     vet[linha+1][coluna] = '1';
-                                                    vet[linha-1][coluna] = '1';   // Imprime as posições do avião a partir da posição (x,y) inicializada.
+                                                    vet[linha-1][coluna] = '1';   // Imprime as posiÃ§Ãµes do aviÃ£o a partir da posiÃ§Ã£o (x,y) inicializada.
                                                     vet[linha][coluna+1] = '1';
                                                     aviao++;
                                                 }
@@ -248,10 +249,10 @@ int main()
                         break;
 
                         case 3: // Submarino.
-                            do{ // Laço de repetição.
+                            do{ // LaÃ§o de repetiÃ§Ã£o.
                                 printf("Escolha como sera o posicionamento do Submarino:\n");
                                 printf("[1] Padrao\n");
-                                printf("[2] Rotacionar 90 graus\n");     // Opções para virar o elemento.
+                                printf("[2] Rotacionar 90 graus\n");     // OpÃ§Ãµes para virar o elemento.
                                 printf("[3] Voltar\n");
                                 scanf("%d",&virar);
                                 if(virar<1 || virar>3){
@@ -263,15 +264,15 @@ int main()
                                 system("cls");
                                 break;
                             }
-                            do{ // Laço de repetição.
+                            do{ // LaÃ§o de repetiÃ§Ã£o.
                                 printf("Digite a linha e coluna para adicionar o Submarino: ");
                                 scanf("%d %c",&linha,&coluna);
                                 for(m=0; m<TAM; m++){
-                                    if(coluna==letra[m]){  // Conversão dos valores do vetor letra para valores inteiros (facilita a indicação da coluna).
+                                    if(coluna==letra[m]){  // ConversÃ£o dos valores do vetor letra para valores inteiros (facilita a indicaÃ§Ã£o da coluna).
                                         coluna = m;
                                     }
                                 }
-                                if(linha>19 || coluna > 19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                if(linha>19 || coluna > 19 || linha<0 || coluna<0){ // CondiÃ§Ã£o para nÃ£o ultrapassar a matriz.
                                     printf("Linha e/ou Coluna invalida. Tente novamente.\n");
                                 }
                                 if(submarino==SUMAX){
@@ -279,36 +280,36 @@ int main()
                                 }
                                 else{
                                     switch(virar){
-                                        case 1: // Opcão padrão:
-                                            if(coluna>16){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                        case 1: // OpcÃ£o padrÃ£o:
+                                            if(coluna>16){ // CondiÃ§Ã£o que lÃª se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
-                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha][coluna+3] != '*'){ // Condição para impedir sobreposição.
+                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha][coluna+3] != '*'){ // CondiÃ§Ã£o para impedir sobreposiÃ§Ã£o.
                                                     printf("Posicao Invalida. Posicao ja possui um elemento.\n");
                                                 }
                                                 else{
                                                     vet[linha][coluna] = '2';
                                                     vet[linha][coluna+1] = '2';
-                                                    vet[linha][coluna+2] = '2';    // Imprime as posições do submarino a partir da posição (x,y) inicializada.
+                                                    vet[linha][coluna+2] = '2';    // Imprime as posiÃ§Ãµes do submarino a partir da posiÃ§Ã£o (x,y) inicializada.
                                                     vet[linha][coluna+3] = '2';
                                                     submarino++;
                                                 }
                                             }
                                         break;
 
-                                        case 2: // Opcão rotacionar 90 graus.
-                                            if(linha>16){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                        case 2: // OpcÃ£o rotacionar 90 graus.
+                                            if(linha>16){ // CondiÃ§Ã£o que lÃª se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
-                                                if(vet[linha][coluna] != '*' || vet[linha+1][coluna] != '*' || vet[linha+2][coluna] != '*' || vet[linha+3][coluna] != '*'){ // Condição para impedir sobreposição.
+                                                if(vet[linha][coluna] != '*' || vet[linha+1][coluna] != '*' || vet[linha+2][coluna] != '*' || vet[linha+3][coluna] != '*'){ // CondiÃ§Ã£o para impedir sobreposiÃ§Ã£o.
                                                     printf("Posicao Invalida. Posicao ja possui um elemento.\n");
                                                 }
                                                 else{
                                                     vet[linha][coluna] = '2';
                                                     vet[linha+1][coluna] = '2';
-                                                    vet[linha+2][coluna] = '2';    // Imprime as posições do submarino a partir da posição (x,y) inicializada.
+                                                    vet[linha+2][coluna] = '2';    // Imprime as posiÃ§Ãµes do submarino a partir da posiÃ§Ã£o (x,y) inicializada.
                                                     vet[linha+3][coluna] = '2';
                                                     submarino++;
                                                 }
@@ -319,11 +320,11 @@ int main()
                             }while(linha>19 || coluna > 19 || linha<0 || coluna<0);
                         break;
 
-                        case 4: // Espião 1.
-                            do{ // Laço de repetição.
+                        case 4: // EspiÃ£o 1.
+                            do{ // LaÃ§o de repetiÃ§Ã£o.
                                 printf("Escolha como sera o posicionamento do Espiao 1:\n");
                                 printf("[1] Padrao\n");
-                                printf("[2] Rotacionar 90 graus para a direita\n");     // Opções para virar o elemento.
+                                printf("[2] Rotacionar 90 graus para a direita\n");     // OpÃ§Ãµes para virar o elemento.
                                 printf("[3] Rotacionar 90 graus para a esquerda\n");
                                 printf("[4] Rotacionar 180 graus\n");
                                 printf("[5] Voltar\n");
@@ -337,16 +338,16 @@ int main()
                                 system("cls");
                                 break;
                             }
-                            do{ // Laço de repetição.
+                            do{ // LaÃ§o de repetiÃ§Ã£o.
                                 printf("Digite a linha e coluna para adicionar o Espiao 1: ");
                                 scanf("%d %c",&linha,&coluna);
 
                                 for(m=0; m<TAM; m++){
-                                    if(coluna==letra[m]){  // Conversão dos valores do vetor letra para valores inteiros (facilita a indicação da coluna).
+                                    if(coluna==letra[m]){  // ConversÃ£o dos valores do vetor letra para valores inteiros (facilita a indicaÃ§Ã£o da coluna).
                                         coluna = m;
                                     }
                                 }
-                                if(linha>19 || coluna > 19 || linha<0 || coluna<0){ // Condição para não ultrapaassar a matriz.
+                                if(linha>19 || coluna > 19 || linha<0 || coluna<0){ // CondiÃ§Ã£o para nÃ£o ultrapaassar a matriz.
                                     printf("Linha e/ou Coluna invalida. Tente novamente.\n");
                                 }
                                 if(espiao_1==E1MAX){
@@ -354,20 +355,20 @@ int main()
                                 }
 
                                 else{
-                                    switch(virar){ // switch case da opção virar que rotaciona o elemento.
+                                    switch(virar){ // switch case da opÃ§Ã£o virar que rotaciona o elemento.
                                         case 1:
-                                            if(linha<1 || linha>18 || coluna>16){  // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha<1 || linha>18 || coluna>16){  // CondiÃ§Ã£o que lÃª se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
-                                                if(vet[linha][coluna] != '*' || vet[linha+1][coluna] != '*' || vet[linha-1][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha][coluna+3] != '*'){ // Condição para impedir sobreposição.
+                                                if(vet[linha][coluna] != '*' || vet[linha+1][coluna] != '*' || vet[linha-1][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha][coluna+3] != '*'){ // CondiÃ§Ã£o para impedir sobreposiÃ§Ã£o.
                                                     printf("Posicao Invalida. Posicao ja possui um elemento.\n");
                                                 }
                                                 else{
                                                     vet[linha][coluna] = '3';
                                                     vet[linha+1][coluna] = '3';
                                                     vet[linha-1][coluna] = '3';
-                                                    vet[linha][coluna+1] = '3';     // Imprime as posições do espião 1 a partir da posição (x,y) inicializada.
+                                                    vet[linha][coluna+1] = '3';     // Imprime as posiÃ§Ãµes do espiÃ£o 1 a partir da posiÃ§Ã£o (x,y) inicializada.
                                                     vet[linha][coluna+2] = '3';
                                                     vet[linha][coluna+3] = '3';
                                                     espiao_1++;
@@ -376,18 +377,18 @@ int main()
                                         break;
 
                                         case 2:
-                                            if(linha>16 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha>16 || coluna>17){ // CondiÃ§Ã£o que lÃª se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
-                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha+1][coluna+1] != '*' || vet[linha+2][coluna+1] != '*' || vet[linha+3][coluna+1] != '*'){ // Condição para impedir sobreposição.
+                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha+1][coluna+1] != '*' || vet[linha+2][coluna+1] != '*' || vet[linha+3][coluna+1] != '*'){ // CondiÃ§Ã£o para impedir sobreposiÃ§Ã£o.
                                                     printf("Posicao Invalida. Posicao ja possui um elemento.\n");
                                                 }
                                                 else{
                                                     vet[linha][coluna] = '3';
                                                     vet[linha][coluna+1] = '3';
                                                     vet[linha][coluna+2] = '3';
-                                                    vet[linha+1][coluna+1] = '3';     // Imprime as posições do espião 1 a partir da posição (x,y) inicializada.
+                                                    vet[linha+1][coluna+1] = '3';     // Imprime as posiÃ§Ãµes do espiÃ£o 1 a partir da posiÃ§Ã£o (x,y) inicializada.
                                                     vet[linha+2][coluna+1] = '3';
                                                     vet[linha+3][coluna+1] = '3';
                                                     espiao_1++;
@@ -396,18 +397,18 @@ int main()
                                         break;
 
                                         case 3:
-                                            if(linha<3 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha<3 || coluna>17){ // CondiÃ§Ã£o que lÃª se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
-                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha-1][coluna+1] != '*' || vet[linha-2][coluna+1] != '*' || vet[linha-3][coluna+1] != '*'){ // Condição para impedir sobreposição.
+                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha-1][coluna+1] != '*' || vet[linha-2][coluna+1] != '*' || vet[linha-3][coluna+1] != '*'){ // CondiÃ§Ã£o para impedir sobreposiÃ§Ã£o.
                                                     printf("Posicao Invalida. Posicao ja possui um elemento.\n");
                                                 }
                                                 else{
                                                     vet[linha][coluna] = '3';
                                                     vet[linha][coluna+1] = '3';
                                                     vet[linha][coluna+2] = '3';
-                                                    vet[linha-1][coluna+1] = '3';     // Imprime as posições do espião 1 a partir da posição (x,y) inicializada.
+                                                    vet[linha-1][coluna+1] = '3';     // Imprime as posiÃ§Ãµes do espiÃ£o 1 a partir da posiÃ§Ã£o (x,y) inicializada.
                                                     vet[linha-2][coluna+1] = '3';
                                                     vet[linha-3][coluna+1] = '3';
                                                     espiao_1++;
@@ -416,18 +417,18 @@ int main()
                                         break;
 
                                         case 4:
-                                            if(linha<1 || linha>18 || coluna>16){  // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha<1 || linha>18 || coluna>16){  // CondiÃ§Ã£o que lÃª se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
-                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha][coluna+3] != '*' || vet[linha-1][coluna+3] != '*' || vet[linha+1][coluna+3] != '*'){ // Condição para impedir sobreposição.
+                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha][coluna+3] != '*' || vet[linha-1][coluna+3] != '*' || vet[linha+1][coluna+3] != '*'){ // CondiÃ§Ã£o para impedir sobreposiÃ§Ã£o.
                                                     printf("Posicao Invalida. Posicao ja possui um elemento.\n");
                                                 }
                                                 else{
                                                     vet[linha][coluna] = '3';
                                                     vet[linha][coluna+1] = '3';
                                                     vet[linha][coluna+2] = '3';
-                                                    vet[linha][coluna+3] = '3';     // Imprime as posições do espião 1 a partir da posição (x,y) inicializada.
+                                                    vet[linha][coluna+3] = '3';     // Imprime as posiÃ§Ãµes do espiÃ£o 1 a partir da posiÃ§Ã£o (x,y) inicializada.
                                                     vet[linha-1][coluna+3] = '3';
                                                     vet[linha+1][coluna+3] = '3';
                                                     espiao_1++;
@@ -439,11 +440,11 @@ int main()
                             }while(linha>19 || coluna > 19 || linha<0 || coluna<0);
                         break;
 
-                        case 5: // Espião 2.
-                            do{ // Laço de repetição.
+                        case 5: // EspiÃ£o 2.
+                            do{ // LaÃ§o de repetiÃ§Ã£o.
                                 printf("Escolha como sera o posicionamento do Espiao 2:\n");
                                 printf("[1] Padrao\n");
-                                printf("[2] Rotacionar 90 graus para a direita\n");     // Opções para virar o elemento.
+                                printf("[2] Rotacionar 90 graus para a direita\n");     // OpÃ§Ãµes para virar o elemento.
                                 printf("[3] Rotacionar 90 graus para a esquerda\n");
                                 printf("[4] Rotacionar 180 graus\n");
                                 printf("[5] Voltar\n");
@@ -457,16 +458,16 @@ int main()
                                 system("cls");
                                 break;
                             }
-                            do{ // Laço de repetição.
+                            do{ // LaÃ§o de repetiÃ§Ã£o.
                                 printf("Digite a linha e coluna para adicionar o Espiao 2: ");
                                 scanf("%d %c",&linha,&coluna);
 
                                 for(m=0; m<TAM; m++){
-                                    if(coluna==letra[m]){  // Conversão dos valores do vetor letra para valores inteiros (facilita a indicação da coluna).
+                                    if(coluna==letra[m]){  // ConversÃ£o dos valores do vetor letra para valores inteiros (facilita a indicaÃ§Ã£o da coluna).
                                         coluna = m;
                                     }
                                 }
-                                if(linha>19 || coluna > 19 || linha<0 || coluna<0){ // Condição para não ultrapaassar a matriz.
+                                if(linha>19 || coluna > 19 || linha<0 || coluna<0){ // CondiÃ§Ã£o para nÃ£o ultrapaassar a matriz.
                                     printf("Linha e/ou Coluna invalida. Tente novamente.\n");
                                 }
                                 if(espiao_2==E2MAX){
@@ -474,20 +475,20 @@ int main()
                                 }
 
                                 else{
-                                    switch(virar){ // switch case da opção virar que rotaciona o elemento.
+                                    switch(virar){ // switch case da opÃ§Ã£o virar que rotaciona o elemento.
                                         case 1:
-                                            if(linha<1 || linha>18 || coluna>16){  // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha<1 || linha>18 || coluna>16){  // CondiÃ§Ã£o que lÃª se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
-                                                if(vet[linha][coluna] != '*' || vet[linha+1][coluna] != '*' || vet[linha-1][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha][coluna+3] != '*'){ // Condição para impedir sobreposição.
+                                                if(vet[linha][coluna] != '*' || vet[linha+1][coluna] != '*' || vet[linha-1][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha][coluna+3] != '*'){ // CondiÃ§Ã£o para impedir sobreposiÃ§Ã£o.
                                                     printf("Posicao Invalida. Posicao ja possui um elemento.\n");
                                                 }
                                                 else{
                                                     vet[linha][coluna] = '4';
                                                     vet[linha+1][coluna] = '4';
                                                     vet[linha-1][coluna] = '4';
-                                                    vet[linha][coluna+1] = '4';     // Imprime as posições do espião 1 a partir da posição (x,y) inicializada.
+                                                    vet[linha][coluna+1] = '4';     // Imprime as posiÃ§Ãµes do espiÃ£o 1 a partir da posiÃ§Ã£o (x,y) inicializada.
                                                     vet[linha][coluna+2] = '4';
                                                     vet[linha][coluna+3] = '4';
                                                     espiao_2++;
@@ -496,18 +497,18 @@ int main()
                                         break;
 
                                         case 2:
-                                            if(linha>16 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha>16 || coluna>17){ // CondiÃ§Ã£o que lÃª se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
-                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha+1][coluna+1] != '*' || vet[linha+2][coluna+1] != '*' || vet[linha+3][coluna+1] != '*'){ // Condição para impedir sobreposição.
+                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha+1][coluna+1] != '*' || vet[linha+2][coluna+1] != '*' || vet[linha+3][coluna+1] != '*'){ // CondiÃ§Ã£o para impedir sobreposiÃ§Ã£o.
                                                     printf("Posicao Invalida. Posicao ja possui um elemento.\n");
                                                 }
                                                 else{
                                                     vet[linha][coluna] = '4';
                                                     vet[linha][coluna+1] = '4';
                                                     vet[linha][coluna+2] = '4';
-                                                    vet[linha+1][coluna+1] = '4';     // Imprime as posições do espião 1 a partir da posição (x,y) inicializada.
+                                                    vet[linha+1][coluna+1] = '4';     // Imprime as posiÃ§Ãµes do espiÃ£o 1 a partir da posiÃ§Ã£o (x,y) inicializada.
                                                     vet[linha+2][coluna+1] = '4';
                                                     vet[linha+3][coluna+1] = '4';
                                                     espiao_2++;
@@ -516,18 +517,18 @@ int main()
                                         break;
 
                                         case 3:
-                                            if(linha<3 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha<3 || coluna>17){ // CondiÃ§Ã£o que lÃª se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
-                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha-1][coluna+1] != '*' || vet[linha-2][coluna+1] != '*' || vet[linha-3][coluna+1] != '*'){ // Condição para impedir sobreposição.
+                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha-1][coluna+1] != '*' || vet[linha-2][coluna+1] != '*' || vet[linha-3][coluna+1] != '*'){ // CondiÃ§Ã£o para impedir sobreposiÃ§Ã£o.
                                                     printf("Posicao Invalida. Posicao ja possui um elemento.\n");
                                                 }
                                                 else{
                                                     vet[linha][coluna] = '4';
                                                     vet[linha][coluna+1] = '4';
                                                     vet[linha][coluna+2] = '4';
-                                                    vet[linha-1][coluna+1] = '4';     // Imprime as posições do espião 1 a partir da posição (x,y) inicializada.
+                                                    vet[linha-1][coluna+1] = '4';     // Imprime as posiÃ§Ãµes do espiÃ£o 1 a partir da posiÃ§Ã£o (x,y) inicializada.
                                                     vet[linha-2][coluna+1] = '4';
                                                     vet[linha-3][coluna+1] = '4';
                                                     espiao_2++;
@@ -536,18 +537,18 @@ int main()
                                         break;
 
                                         case 4:
-                                            if(linha<1 || linha>18 || coluna>16){  // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha<1 || linha>18 || coluna>16){  // CondiÃ§Ã£o que lÃª se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
-                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha][coluna+3] != '*' || vet[linha-1][coluna+3] != '*' || vet[linha+1][coluna+3] != '*'){ // Condição para impedir sobreposição.
+                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha][coluna+3] != '*' || vet[linha-1][coluna+3] != '*' || vet[linha+1][coluna+3] != '*'){ // CondiÃ§Ã£o para impedir sobreposiÃ§Ã£o.
                                                     printf("Posicao Invalida. Posicao ja possui um elemento.\n");
                                                 }
                                                 else{
                                                     vet[linha][coluna] = '4';
                                                     vet[linha][coluna+1] = '4';
                                                     vet[linha][coluna+2] = '4';
-                                                    vet[linha][coluna+3] = '4';     // Imprime as posições do espião 1 a partir da posição (x,y) inicializada.
+                                                    vet[linha][coluna+3] = '4';     // Imprime as posiÃ§Ãµes do espiÃ£o 1 a partir da posiÃ§Ã£o (x,y) inicializada.
                                                     vet[linha-1][coluna+3] = '4';
                                                     vet[linha+1][coluna+3] = '4';
                                                     espiao_2++;
@@ -559,11 +560,11 @@ int main()
                             }while(linha>19 || coluna > 19 || linha<0 || coluna<0);
                         break;
 
-                        case 6: // Porta-aviões.
-                            do{ // Laço de repetição.
+                        case 6: // Porta-aviÃµes.
+                            do{ // LaÃ§o de repetiÃ§Ã£o.
                                 printf("Escolha como sera o posicionamento do Porta-avioes:\n");
                                 printf("[1] Padrao\n");
-                                printf("[2] Rotacionar 90 graus\n");     // Opções para virar o elemento.
+                                printf("[2] Rotacionar 90 graus\n");     // OpÃ§Ãµes para virar o elemento.
                                 printf("[3] Voltar\n");
                                 scanf("%d",&virar);
                                 if(virar<1 || virar>3){
@@ -575,15 +576,15 @@ int main()
                                 system("cls");
                                 break;
                             }
-                            do{ // Laço de repetição.
+                            do{ // LaÃ§o de repetiÃ§Ã£o.
                                 printf("Digite a linha e coluna para adicionar o Porta-avioes: ");
                                 scanf("%d %c",&linha,&coluna);
                                 for(m=0; m<TAM; m++){
-                                    if(coluna==letra[m]){  // Conversão dos valores do vetor letra para valores inteiros (facilita a indicação da coluna).
+                                    if(coluna==letra[m]){  // ConversÃ£o dos valores do vetor letra para valores inteiros (facilita a indicaÃ§Ã£o da coluna).
                                         coluna = m;
                                     }
                                 }
-                                if(linha>19 || coluna > 19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                if(linha>19 || coluna > 19 || linha<0 || coluna<0){ // CondiÃ§Ã£o para nÃ£o ultrapassar a matriz.
                                     printf("Linha e/ou Coluna invalida. Tente novamente.\n");
                                 }
                                 if(submarino==PAMAX){
@@ -591,12 +592,12 @@ int main()
                                 }
                                 else{
                                     switch(virar){
-                                        case 1: // Opcão padrão:
-                                            if(coluna>15 || linha>18){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                        case 1: // OpcÃ£o padrÃ£o:
+                                            if(coluna>15 || linha>18){ // CondiÃ§Ã£o que lÃª se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
-                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha][coluna+3] != '*' || vet[linha][coluna+4] != '*' || vet[linha+1][coluna] != '*' || vet[linha+1][coluna+1] != '*' || vet[linha+1][coluna+2] != '*' || vet[linha+1][coluna+3] != '*' || vet[linha+1][coluna+4] != '*'){ // Condição para impedir sobreposição.
+                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha][coluna+3] != '*' || vet[linha][coluna+4] != '*' || vet[linha+1][coluna] != '*' || vet[linha+1][coluna+1] != '*' || vet[linha+1][coluna+2] != '*' || vet[linha+1][coluna+3] != '*' || vet[linha+1][coluna+4] != '*'){ // CondiÃ§Ã£o para impedir sobreposiÃ§Ã£o.
                                                     printf("Posicao Invalida. Posicao ja possui um elemento.\n");
                                                 }
                                                 else{
@@ -605,7 +606,7 @@ int main()
                                                     vet[linha][coluna+2] = '5';
                                                     vet[linha][coluna+3] = '5';
                                                     vet[linha][coluna+4] = '5';
-                                                    vet[linha+1][coluna] = '5';     // Imprime as posições do porta-aviões a partir da posição (x,y) inicializada.
+                                                    vet[linha+1][coluna] = '5';     // Imprime as posiÃ§Ãµes do porta-aviÃµes a partir da posiÃ§Ã£o (x,y) inicializada.
                                                     vet[linha+1][coluna+1] = '5';
                                                     vet[linha+1][coluna+2] = '5';
                                                     vet[linha+1][coluna+3] = '5';
@@ -615,12 +616,12 @@ int main()
                                             }
                                         break;
 
-                                        case 2: // Opcão rotacionar 90 graus.
-                                            if(linha>15 || coluna>18){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                        case 2: // OpcÃ£o rotacionar 90 graus.
+                                            if(linha>15 || coluna>18){ // CondiÃ§Ã£o que lÃª se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
-                                                if(vet[linha][coluna] != '*' || vet[linha+1][coluna] != '*' || vet[linha+2][coluna] != '*' || vet[linha+3][coluna] != '*' || vet[linha+4][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha+1][coluna+1] != '*' || vet[linha+2][coluna+1] != '*' || vet[linha+3][coluna+1] != '*' || vet[linha+4][coluna+1] != '*'){ // Condição para impedir sobreposição.
+                                                if(vet[linha][coluna] != '*' || vet[linha+1][coluna] != '*' || vet[linha+2][coluna] != '*' || vet[linha+3][coluna] != '*' || vet[linha+4][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha+1][coluna+1] != '*' || vet[linha+2][coluna+1] != '*' || vet[linha+3][coluna+1] != '*' || vet[linha+4][coluna+1] != '*'){ // CondiÃ§Ã£o para impedir sobreposiÃ§Ã£o.
                                                     printf("Posicao Invalida. Posicao ja possui um elemento.\n");
                                                 }
                                                 else{
@@ -629,7 +630,7 @@ int main()
                                                     vet[linha+2][coluna] = '5';
                                                     vet[linha+3][coluna] = '5';
                                                     vet[linha+4][coluna] = '5';
-                                                    vet[linha][coluna+1] = '5';     // Imprime as posições do porta-aviões a partir da posição (x,y) inicializada.
+                                                    vet[linha][coluna+1] = '5';     // Imprime as posiÃ§Ãµes do porta-aviÃµes a partir da posiÃ§Ã£o (x,y) inicializada.
                                                     vet[linha+1][coluna+1] = '5';
                                                     vet[linha+2][coluna+1] = '5';
                                                     vet[linha+3][coluna+1] = '5';
@@ -652,9 +653,11 @@ int main()
 
                 break;
 
-            case 2: // Aqui está a opção 2 (Instruções) do menu principal. Não acho que precisa de explicações maiores. Feito apenas por estética. (Não sei usar função, poderia minimizar a quantidade de linhas).
+            case 2: // Aqui estÃ¡ a opÃ§Ã£o 2 (InstruÃ§Ãµes) do menu principal. NÃ£o acho que precisa de explicaÃ§Ãµes maiores. Feito apenas por estÃ©tica. (NÃ£o sei usar funÃ§Ã£o, poderia minimizar a quantidade de linhas).
                 printf("Instrucoes de posicionamento das pecas.\n");
                 printf("\---------------------------------------\n");
+                printf(">>O ponto de incializacao do elemento vai do ponto mais a esquerda para direita, e de cima para baixo.<<\n");
+                printf("\n");
 
                 printf("Boia esta representada com '0'.\n");
                 printf("\n");
@@ -890,14 +893,14 @@ int main()
 
                 do{
                     printf("\n");
-                    printf("[1] Voltar\n");  // Menu que aparece nas instruções.
+                    printf("[1] Voltar\n");  // Menu que aparece nas instruÃ§Ãµes.
                     printf("[2] Sair\n");
                     scanf("%d",&voltar_sair);
                     if(voltar_sair>2 || voltar_sair<1){
                         printf("\n");
                         printf("Opcao invalida.\n");
                     }
-                    if(voltar_sair==2){ // Opção sair. (Fecha o jogo nas instruções...)
+                    if(voltar_sair==2){ // OpÃ§Ã£o sair. (Fecha o jogo nas instruÃ§Ãµes...)
                         system("cls");
                         printf("Obrigado por jogar!\n");
                         return 0;
@@ -906,7 +909,7 @@ int main()
 
                 break;
 
-            case 3: // Opção sair.
+            case 3: // OpÃ§Ã£o sair.
                 printf("Obrigado por jogar!\n");
                 return 0;
                 break;
