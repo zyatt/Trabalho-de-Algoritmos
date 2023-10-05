@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #define TAM 20 // Valor definido para o total de linhas e colunas.
 #define BOMAX 10
 #define AVMAX 5
@@ -25,6 +26,7 @@ int main()
     int linha;   // Adicionei as variáveis 'linha' e 'coluna' pra não ter conflito com a 'i' e 'j'.
     char coluna;
     int boia = 0, aviao = 0, submarino = 0, espiao_1 = 0, espiao_2 = 0, porta_avioes = 0; // Variavél de cada elemento.
+    srand(time(NULL));
 
     do{
         do{
@@ -76,6 +78,13 @@ int main()
                     if(boia == BOMAX && aviao == AVMAX && submarino == SUMAX && espiao_1 == E1MAX && espiao_2 == E2MAX && porta_avioes == PAMAX){ // Condição de parada do loop.
                         printf("\n");
                         printf("A Frota maritima foi posicinada com sucesso!\n");
+                        printf("Total:\n");
+                        printf("Boia [%d]\n",boia);
+                        printf("Aviao [%d]\n",aviao);
+                        printf("Submarino [%d]\n",submarino);
+                        printf("Espiao 1 [%d]\n",espiao_1);
+                        printf("Espiao 2 [%d]\n",espiao_2);
+                        printf("Porta-aviao [%d]\n",porta_avioes);
                         return 0;
                     }
                     do{
@@ -90,6 +99,7 @@ int main()
                             printf("[6] Porta-Avioes\n");
                             printf("[7] Voltar\n"); // Volta para o menu principal (reseta o jogo).
                             printf("[8] Finalizar o jogo\n");
+                            printf("[9] Aleatorizar\n");
                             scanf("%d",&opcao);
                             if(opcao==7){
                                 voltar_sair=1;       // Aqui todas as variáveis resetam para que o jogo recomece.
@@ -97,11 +107,11 @@ int main()
                                 boia = 0, aviao = 0, submarino = 0, espiao_1 = 0, espiao_2 = 0, porta_avioes = 0;
                             }
 
-                            if(opcao<1 || opcao>8){
+                            if(opcao<1 || opcao>9){
                                 printf("\n");
                                 printf("Opcao invalida. Tente novamente.\n");
                             }
-                        }while(opcao<1||opcao>8);
+                        }while(opcao<1||opcao>9);
                         virar = 0; // resetar a variável 'virar'
                     }while(virar==5 || virar==3);
 
@@ -258,7 +268,7 @@ int main()
                                     printf("\n");
                                     printf("Opcao invalida. Tente novamente.\n\n");
                                 }
-                            }while(virar<1 || virar > 3);
+                            }while(virar<1 || virar>3);
                             if(virar==3){
                                 system("cls");
                                 break;
@@ -271,7 +281,7 @@ int main()
                                         coluna = m;
                                     }
                                 }
-                                if(linha>19 || coluna > 19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
                                     printf("Linha e/ou Coluna invalida. Tente novamente.\n");
                                 }
                                 if(submarino==SUMAX){
@@ -346,7 +356,7 @@ int main()
                                         coluna = m;
                                     }
                                 }
-                                if(linha>19 || coluna > 19 || linha<0 || coluna<0){ // Condição para não ultrapaassar a matriz.
+                                if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapaassar a matriz.
                                     printf("Linha e/ou Coluna invalida. Tente novamente.\n");
                                 }
                                 if(espiao_1==E1MAX){
@@ -436,7 +446,7 @@ int main()
                                         break;
                                     }
                                 }
-                            }while(linha>19 || coluna > 19 || linha<0 || coluna<0);
+                            }while(linha>19 || coluna>19 || linha<0 || coluna<0);
                         break;
 
                         case 5: // Espião 2.
@@ -466,7 +476,7 @@ int main()
                                         coluna = m;
                                     }
                                 }
-                                if(linha>19 || coluna > 19 || linha<0 || coluna<0){ // Condição para não ultrapaassar a matriz.
+                                if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapaassar a matriz.
                                     printf("Linha e/ou Coluna invalida. Tente novamente.\n");
                                 }
                                 if(espiao_2==E2MAX){
@@ -583,7 +593,7 @@ int main()
                                         coluna = m;
                                     }
                                 }
-                                if(linha>19 || coluna > 19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
                                     printf("Linha e/ou Coluna invalida. Tente novamente.\n");
                                 }
                                 if(submarino==PAMAX){
@@ -647,6 +657,386 @@ int main()
                             printf("Obrigado por jogar!\n");
                             return 0;
                             break;
+                        case 9:
+                            do{ // Sortear boias aleatoriamente
+                                linha = rand()%20; // Sortear linha
+                                coluna = rand()%20; // Sortear coluna
+
+                                if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                    }
+                                    if(boia==BOMAX){
+                                        printf("Quantidade maxima de Boias atingida.\n"); // Limitar a quantidade.
+                                    }
+                                    else if(linha>=0 && linha<TAM && coluna>=0 && coluna<TAM){
+                                        if(vet[linha][coluna] != '*'){ // Condição para impedir sobreposição.
+                                    }
+                                        else{
+                                            vet[linha][coluna] = '0';   // Imprime a posição da boia na posição (x,y) escolhida pelo usuário.
+                                            boia++;
+                                        }
+                                    }
+                            }while(boia<BOMAX);
+
+                            do{ // Sortear aviões aleatoriamente
+                                linha = rand()%20;// Sortear linha
+                                coluna = rand()%20; // Sortear coluna
+                                virar = (rand()%4) + 1; // Sortear a opção virar
+
+                                if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                }
+                                if(aviao==AVMAX){
+                                    printf("Quantidade maxima de Avioes atingida.\n"); // Limitar a quantidade.
+                                }
+                                else{
+                                    switch(virar){ // switch case para rotação do elemento.
+                                        case 1: // Opcão padrão:
+                                            if(linha<1 || linha>18 || coluna>18){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            }
+                                            else{
+                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha+1][coluna+1] != '*' || vet[linha-1][coluna+1] != '*'){ // Verifica se há algum elemento na posição.
+                                                }
+                                                else{
+                                                    vet[linha][coluna] = '1';
+                                                    vet[linha][coluna+1] = '1';
+                                                    vet[linha+1][coluna+1] = '1';    // Imprime as posições do avião a partir da posição (x,y) inicializada.
+                                                    vet[linha-1][coluna+1] = '1';
+                                                    aviao++;
+                                                    }
+                                            }
+                                        break;
+
+                                        case 2: // Opção virar 90° para a direita:
+                                            if(linha<1 || linha>19 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            }
+                                            else{
+                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha-1][coluna+1] != '*' || vet[linha][coluna+2] != '*'){ // Verifica se há algum elemento na posição.
+                                                }
+                                                else{
+                                                    vet[linha][coluna] = '1';
+                                                    vet[linha][coluna+1] = '1';
+                                                    vet[linha-1][coluna+1] = '1';    // Imprime as posições do avião a partir da posição (x,y) inicializada.
+                                                    vet[linha][coluna+2] = '1';
+                                                    aviao++;
+                                                }
+                                            }
+                                        break;
+
+                                        case 3: // Opção virar 90° para a esquerda:
+                                            if(linha>18 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            }
+                                            else{
+                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha+1][coluna+1] != '*'){ // Verifica se há algum elemento na posição.
+                                                }
+                                                else{
+                                                    vet[linha][coluna] = '1';
+                                                    vet[linha][coluna+1] = '1';   // Imprime as posições do avião a partir da posição (x,y) inicializada.
+                                                    vet[linha][coluna+2] = '1';
+                                                    vet[linha+1][coluna+1] = '1';
+                                                    aviao++;
+                                                }
+                                            }
+                                        break;
+
+                                        case 4: // Opcao virar 180°
+                                            if(linha<1 || linha>18   || coluna>18){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            }
+                                            else{
+                                                if(vet[linha][coluna] != '*' || vet[linha+1][coluna] != '*' || vet[linha-1][coluna] != '*' || vet[linha][coluna+1] != '*'){  // Verifica se há algum elemento na posição.
+                                                }
+                                                else{
+                                                    vet[linha][coluna] = '1';
+                                                    vet[linha+1][coluna] = '1';
+                                                    vet[linha-1][coluna] = '1';   // Imprime as posições do avião a partir da posição (x,y) inicializada.
+                                                    vet[linha][coluna+1] = '1';
+                                                    aviao++;
+                                                }
+                                            }
+                                        break;
+                                    }
+                                }
+                            }while(aviao<AVMAX);
+
+                            do{ // Sortear submarinos aleatoriamente
+                                linha = rand()%20; // Sortear linha
+                                coluna = rand()%20; // Sortear coluna
+                                virar = (rand()%2) + 1; // Sortear a opção virar
+
+                                if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                }
+                                if(submarino==SUMAX){
+                                    printf("Quantidade maxima de Submarinos atingida.\n"); // Limitar a quantidade.
+                                }
+                                else{
+                                    switch(virar){
+                                        case 1: // Opcão padrão:
+                                            if(coluna>16){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            }
+                                            else{
+                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha][coluna+3] != '*'){ // Condição para impedir sobreposição.
+                                                }
+                                                else{
+                                                    vet[linha][coluna] = '2';
+                                                    vet[linha][coluna+1] = '2';
+                                                    vet[linha][coluna+2] = '2';    // Imprime as posições do submarino a partir da posição (x,y) inicializada.
+                                                    vet[linha][coluna+3] = '2';
+                                                    submarino++;
+                                                }
+                                            }
+                                        break;
+
+                                        case 2: // Opcão rotacionar 90 graus.
+                                            if(linha>16){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            }
+                                            else{
+                                                if(vet[linha][coluna] != '*' || vet[linha+1][coluna] != '*' || vet[linha+2][coluna] != '*' || vet[linha+3][coluna] != '*'){ // Condição para impedir sobreposição.
+                                                }
+                                                else{
+                                                    vet[linha][coluna] = '2';
+                                                    vet[linha+1][coluna] = '2';
+                                                    vet[linha+2][coluna] = '2';    // Imprime as posições do submarino a partir da posição (x,y) inicializada.
+                                                    vet[linha+3][coluna] = '2';
+                                                    submarino++;
+                                                }
+                                            }
+                                        break;
+                                    }
+                                }
+                            }while(submarino<SUMAX);
+
+                            do{ // Sortear espião 1 aleatoriamente
+                                linha = rand()%20;// Sortear linha
+                                coluna = rand()%20; // Sortear coluna
+                                virar = (rand()%4) + 1; // Sortear a opção virar
+
+                                if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapaassar a matriz.
+                                }
+                                if(espiao_1==E1MAX){
+                                    printf("Quantidade maxima de Espioes 1 atingida.\n"); // Limitar a quantidade.
+                                }
+
+                                else{
+                                    switch(virar){ // switch case da opção virar que rotaciona o elemento.
+                                        case 1:
+                                            if(linha<1 || linha>18 || coluna>16){  // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            }
+                                            else{
+                                                if(vet[linha][coluna] != '*' || vet[linha+1][coluna] != '*' || vet[linha-1][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha][coluna+3] != '*'){ // Condição para impedir sobreposição.
+                                                }
+                                                else{
+                                                    vet[linha][coluna] = '3';
+                                                    vet[linha+1][coluna] = '3';
+                                                    vet[linha-1][coluna] = '3';
+                                                    vet[linha][coluna+1] = '3';     // Imprime as posições do espião 1 a partir da posição (x,y) inicializada.
+                                                    vet[linha][coluna+2] = '3';
+                                                    vet[linha][coluna+3] = '3';
+                                                    espiao_1++;
+                                                }
+                                            }
+                                        break;
+
+                                        case 2:
+                                            if(linha>16 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            }
+                                            else{
+                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha+1][coluna+1] != '*' || vet[linha+2][coluna+1] != '*' || vet[linha+3][coluna+1] != '*'){ // Condição para impedir sobreposição.
+                                                }
+                                                else{
+                                                    vet[linha][coluna] = '3';
+                                                    vet[linha][coluna+1] = '3';
+                                                    vet[linha][coluna+2] = '3';
+                                                    vet[linha+1][coluna+1] = '3';     // Imprime as posições do espião 1 a partir da posição (x,y) inicializada.
+                                                    vet[linha+2][coluna+1] = '3';
+                                                    vet[linha+3][coluna+1] = '3';
+                                                    espiao_1++;
+                                                }
+                                            }
+                                        break;
+
+                                        case 3:
+                                            if(linha<3 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            }
+                                            else{
+                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha-1][coluna+1] != '*' || vet[linha-2][coluna+1] != '*' || vet[linha-3][coluna+1] != '*'){ // Condição para impedir sobreposição.
+                                                }
+                                                else{
+                                                    vet[linha][coluna] = '3';
+                                                    vet[linha][coluna+1] = '3';
+                                                    vet[linha][coluna+2] = '3';
+                                                    vet[linha-1][coluna+1] = '3';     // Imprime as posições do espião 1 a partir da posição (x,y) inicializada.
+                                                    vet[linha-2][coluna+1] = '3';
+                                                    vet[linha-3][coluna+1] = '3';
+                                                    espiao_1++;
+                                                }
+                                            }
+                                        break;
+
+                                        case 4:
+                                            if(linha<1 || linha>18 || coluna>16){  // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            }
+                                            else{
+                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha][coluna+3] != '*' || vet[linha-1][coluna+3] != '*' || vet[linha+1][coluna+3] != '*'){ // Condição para impedir sobreposição.
+                                                }
+                                                else{
+                                                    vet[linha][coluna] = '3';
+                                                    vet[linha][coluna+1] = '3';
+                                                    vet[linha][coluna+2] = '3';
+                                                    vet[linha][coluna+3] = '3';     // Imprime as posições do espião 1 a partir da posição (x,y) inicializada.
+                                                    vet[linha-1][coluna+3] = '3';
+                                                    vet[linha+1][coluna+3] = '3';
+                                                    espiao_1++;
+                                                }
+                                            }
+                                        break;
+                                    }
+                                }
+                            }while(espiao_1<E1MAX);
+
+                            do{ // Sortear espião 2 aleatoriamente
+                                linha = rand()%20;// Sortear linha
+                                coluna = rand()%20; // Sortear coluna
+                                virar = (rand()%4) + 1; // Sortear a opção virar
+
+                                if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapaassar a matriz.
+                                }
+                                if(espiao_2==E2MAX){
+                                    printf("Quantidade maxima de Espioes 2 atingida.\n"); // Limitar a quantidade.
+                                }
+
+                                else{
+                                    switch(virar){ // switch case da opção virar que rotaciona o elemento.
+                                        case 1:
+                                            if(linha<1 || linha>18 || coluna>16){  // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            }
+                                            else{
+                                                if(vet[linha][coluna] != '*' || vet[linha+1][coluna] != '*' || vet[linha-1][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha][coluna+3] != '*'){ // Condição para impedir sobreposição.
+                                                }
+                                                else{
+                                                    vet[linha][coluna] = '4';
+                                                    vet[linha+1][coluna] = '4';
+                                                    vet[linha-1][coluna] = '4';
+                                                    vet[linha][coluna+1] = '4';     // Imprime as posições do espião 1 a partir da posição (x,y) inicializada.
+                                                    vet[linha][coluna+2] = '4';
+                                                    vet[linha][coluna+3] = '4';
+                                                    espiao_2++;
+                                                }
+                                            }
+                                        break;
+
+                                        case 2:
+                                            if(linha>16 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            }
+                                            else{
+                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha+1][coluna+1] != '*' || vet[linha+2][coluna+1] != '*' || vet[linha+3][coluna+1] != '*'){ // Condição para impedir sobreposição.
+                                                }
+                                                else{
+                                                    vet[linha][coluna] = '4';
+                                                    vet[linha][coluna+1] = '4';
+                                                    vet[linha][coluna+2] = '4';
+                                                    vet[linha+1][coluna+1] = '4';     // Imprime as posições do espião 1 a partir da posição (x,y) inicializada.
+                                                    vet[linha+2][coluna+1] = '4';
+                                                    vet[linha+3][coluna+1] = '4';
+                                                    espiao_2++;
+                                                }
+                                            }
+                                        break;
+
+                                        case 3:
+                                            if(linha<3 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            }
+                                            else{
+                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha-1][coluna+1] != '*' || vet[linha-2][coluna+1] != '*' || vet[linha-3][coluna+1] != '*'){ // Condição para impedir sobreposição.
+                                                }
+                                                else{
+                                                    vet[linha][coluna] = '4';
+                                                    vet[linha][coluna+1] = '4';
+                                                    vet[linha][coluna+2] = '4';
+                                                    vet[linha-1][coluna+1] = '4';     // Imprime as posições do espião 1 a partir da posição (x,y) inicializada.
+                                                    vet[linha-2][coluna+1] = '4';
+                                                    vet[linha-3][coluna+1] = '4';
+                                                    espiao_2++;
+                                                }
+                                            }
+                                        break;
+
+                                        case 4:
+                                            if(linha<1 || linha>18 || coluna>16){  // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            }
+                                            else{
+                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha][coluna+3] != '*' || vet[linha-1][coluna+3] != '*' || vet[linha+1][coluna+3] != '*'){ // Condição para impedir sobreposição.
+                                                }
+                                                else{
+                                                    vet[linha][coluna] = '4';
+                                                    vet[linha][coluna+1] = '4';
+                                                    vet[linha][coluna+2] = '4';
+                                                    vet[linha][coluna+3] = '4';     // Imprime as posições do espião 1 a partir da posição (x,y) inicializada.
+                                                    vet[linha-1][coluna+3] = '4';
+                                                    vet[linha+1][coluna+3] = '4';
+                                                    espiao_2++;
+                                                }
+                                            }
+                                        break;
+                                    }
+                                }
+                            }while(espiao_2<E2MAX);
+
+                            do{ // Sortear porta-aviões aleatoriamente
+                                linha = rand()%20; // Sortear linha
+                                coluna = rand()%20; // Sortear coluna
+                                virar = (rand()%2) + 1; // Sortear a opção virar
+                                if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                }
+                                if(submarino==PAMAX){
+                                    printf("Quantidade maxima de Porta-avioes atingida.\n"); // Limitar a quantidade.
+                                }
+                                else{
+                                    switch(virar){
+                                        case 1: // Opcão padrão:
+                                            if(coluna>15 || linha>18){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            }
+                                            else{
+                                                if(vet[linha][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha][coluna+2] != '*' || vet[linha][coluna+3] != '*' || vet[linha][coluna+4] != '*' || vet[linha+1][coluna] != '*' || vet[linha+1][coluna+1] != '*' || vet[linha+1][coluna+2] != '*' || vet[linha+1][coluna+3] != '*' || vet[linha+1][coluna+4] != '*'){ // Condição para impedir sobreposição.
+                                                }
+                                                else{
+                                                    vet[linha][coluna] = '5';
+                                                    vet[linha][coluna+1] = '5';
+                                                    vet[linha][coluna+2] = '5';
+                                                    vet[linha][coluna+3] = '5';
+                                                    vet[linha][coluna+4] = '5';
+                                                    vet[linha+1][coluna] = '5';     // Imprime as posições do porta-aviões a partir da posição (x,y) inicializada.
+                                                    vet[linha+1][coluna+1] = '5';
+                                                    vet[linha+1][coluna+2] = '5';
+                                                    vet[linha+1][coluna+3] = '5';
+                                                    vet[linha+1][coluna+4] = '5';
+                                                    porta_avioes++;
+                                                }
+                                            }
+                                        break;
+
+                                        case 2: // Opcão rotacionar 90 graus.
+                                            if(linha>15 || coluna>18){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            }
+                                            else{
+                                                if(vet[linha][coluna] != '*' || vet[linha+1][coluna] != '*' || vet[linha+2][coluna] != '*' || vet[linha+3][coluna] != '*' || vet[linha+4][coluna] != '*' || vet[linha][coluna+1] != '*' || vet[linha+1][coluna+1] != '*' || vet[linha+2][coluna+1] != '*' || vet[linha+3][coluna+1] != '*' || vet[linha+4][coluna+1] != '*'){ // Condição para impedir sobreposição.
+                                                }
+                                                else{
+                                                    vet[linha][coluna] = '5';
+                                                    vet[linha+1][coluna] = '5';
+                                                    vet[linha+2][coluna] = '5';
+                                                    vet[linha+3][coluna] = '5';
+                                                    vet[linha+4][coluna] = '5';
+                                                    vet[linha][coluna+1] = '5';     // Imprime as posições do porta-aviões a partir da posição (x,y) inicializada.
+                                                    vet[linha+1][coluna+1] = '5';
+                                                    vet[linha+2][coluna+1] = '5';
+                                                    vet[linha+3][coluna+1] = '5';
+                                                    vet[linha+4][coluna+1] = '5';
+                                                    porta_avioes++;
+                                                }
+                                            }
+                                        break;
+                                    }
+                                }
+                            }while(porta_avioes<PAMAX);
+                        break;
                     }
                 }while(voltar_sair2==0);
 
