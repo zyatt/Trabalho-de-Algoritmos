@@ -136,7 +136,11 @@ int main()
                             do{ // Laço de repetição.
                                 printf("Digite a linha e coluna para adicionar a Boia: ");
                                 scanf("%d %c",&linha,&coluna);
-
+                                for(m=0; m<TAM; m++){
+                                    if(coluna==letra[m]){  // Conversão dos valores do vetor letra para valores inteiros (facilita a indicação da coluna).
+                                        coluna = m;
+                                    }
+                                }
                                 if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
                                     printf("Linha e/ou Coluna invalida. Tente novamente.\n");
                                 }
