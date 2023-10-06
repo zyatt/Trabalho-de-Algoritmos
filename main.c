@@ -136,11 +136,7 @@ int main()
                             do{ // Laço de repetição.
                                 printf("Digite a linha e coluna para adicionar a Boia: ");
                                 scanf("%d %c",&linha,&coluna);
-                                for(m=0; m<TAM; m++){
-                                    if(coluna==letra[m]){ // Conversão dos valores do vetor letra para valores inteiros (facilita a indicação da coluna).
-                                        coluna = m;
-                                    }
-                                }
+
                                 if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
                                     printf("Linha e/ou Coluna invalida. Tente novamente.\n");
                                 }
@@ -186,17 +182,17 @@ int main()
                                         coluna = m;
                                     }
                                 }
-                                if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
-                                    printf("\n");
-                                    printf("Linha e/ou Coluna invalida. Tente novamente.\n");
-                                }
                                 if(aviao==AVMAX){
                                     printf("Quantidade maxima de Avioes atingida.\n"); // Limitar a quantidade.
                                 }
                                 else{
                                     switch(virar){ // switch case para rotação do elemento.
                                         case 1: // Opcão padrão:
-                                            if(linha<1 || linha>18 || coluna>18){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                                printf("\n");
+                                                printf("Linha e/ou Coluna invalida. Tente novamente.\n");
+                                            }
+                                            else if(linha<1 || linha>18 || coluna>18){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
@@ -214,7 +210,11 @@ int main()
                                         break;
 
                                         case 2: // Opção virar 90° para a direita:
-                                            if(linha<1 || linha>19 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                                printf("\n");
+                                                printf("Linha e/ou Coluna invalida. Tente novamente.\n");
+                                            }
+                                            else if(linha<1 || linha>19 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
@@ -232,7 +232,11 @@ int main()
                                         break;
 
                                         case 3: // Opção virar 90° para a esquerda:
-                                            if(linha>18 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                                printf("\n");
+                                                printf("Linha e/ou Coluna invalida. Tente novamente.\n");
+                                            }
+                                            else if(linha>18 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
@@ -250,7 +254,11 @@ int main()
                                         break;
 
                                         case 4: // Opcao virar 180°
-                                            if(linha<1 || linha>18   || coluna>18){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                                printf("\n");
+                                                printf("Linha e/ou Coluna invalida. Tente novamente.\n");
+                                            }
+                                            else if(linha<1 || linha>18   || coluna>18){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
@@ -295,16 +303,17 @@ int main()
                                         coluna = m;
                                     }
                                 }
-                                if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
-                                    printf("Linha e/ou Coluna invalida. Tente novamente.\n");
-                                }
                                 if(submarino==SUMAX){
                                     printf("Quantidade maxima de Submarinos atingida.\n"); // Limitar a quantidade.
                                 }
                                 else{
                                     switch(virar){
                                         case 1: // Opcão padrão:
-                                            if(coluna>16){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                                printf("\n");
+                                                printf("Linha e/ou Coluna invalida. Tente novamente.\n");
+                                            }
+                                            else if(coluna>16){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
@@ -322,7 +331,11 @@ int main()
                                         break;
 
                                         case 2: // Opcão rotacionar 90 graus.
-                                            if(linha>16){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                                printf("\n");
+                                                printf("Linha e/ou Coluna invalida. Tente novamente.\n");
+                                            }
+                                            else if(linha>16){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
@@ -370,9 +383,6 @@ int main()
                                         coluna = m;
                                     }
                                 }
-                                if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapaassar a matriz.
-                                    printf("Linha e/ou Coluna invalida. Tente novamente.\n");
-                                }
                                 if(espiao_1==E1MAX){
                                     printf("Quantidade maxima de Espioes 1 atingida.\n"); // Limitar a quantidade.
                                 }
@@ -380,7 +390,11 @@ int main()
                                 else{
                                     switch(virar){ // switch case da opção virar que rotaciona o elemento.
                                         case 1:
-                                            if(linha<1 || linha>18 || coluna>16){  // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                                printf("\n");
+                                                printf("Linha e/ou Coluna invalida. Tente novamente.\n");
+                                            }
+                                            else if(linha<1 || linha>18 || coluna>16){  // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
@@ -400,7 +414,11 @@ int main()
                                         break;
 
                                         case 2:
-                                            if(linha>16 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                                printf("\n");
+                                                printf("Linha e/ou Coluna invalida. Tente novamente.\n");
+                                            }
+                                            else if(linha>16 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
@@ -420,7 +438,11 @@ int main()
                                         break;
 
                                         case 3:
-                                            if(linha<3 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                                printf("\n");
+                                                printf("Linha e/ou Coluna invalida. Tente novamente.\n");
+                                            }
+                                            else if(linha<3 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
@@ -440,7 +462,11 @@ int main()
                                         break;
 
                                         case 4:
-                                            if(linha<1 || linha>18 || coluna>16){  // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                                printf("\n");
+                                                printf("Linha e/ou Coluna invalida. Tente novamente.\n");
+                                            }
+                                            else if(linha<1 || linha>18 || coluna>16){  // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
@@ -490,9 +516,6 @@ int main()
                                         coluna = m;
                                     }
                                 }
-                                if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapaassar a matriz.
-                                    printf("Linha e/ou Coluna invalida. Tente novamente.\n");
-                                }
                                 if(espiao_2==E2MAX){
                                     printf("Quantidade maxima de Espioes 2 atingida.\n"); // Limitar a quantidade.
                                 }
@@ -500,7 +523,11 @@ int main()
                                 else{
                                     switch(virar){ // switch case da opção virar que rotaciona o elemento.
                                         case 1:
-                                            if(linha<1 || linha>18 || coluna>16){  // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                                printf("\n");
+                                                printf("Linha e/ou Coluna invalida. Tente novamente.\n");
+                                            }
+                                            else if(linha<1 || linha>18 || coluna>16){  // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
@@ -520,7 +547,11 @@ int main()
                                         break;
 
                                         case 2:
-                                            if(linha>16 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                                printf("\n");
+                                                printf("Linha e/ou Coluna invalida. Tente novamente.\n");
+                                            }
+                                            else if(linha>16 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
@@ -540,7 +571,11 @@ int main()
                                         break;
 
                                         case 3:
-                                            if(linha<3 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                                printf("\n");
+                                                printf("Linha e/ou Coluna invalida. Tente novamente.\n");
+                                            }
+                                            else if(linha<3 || coluna>17){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
@@ -560,7 +595,11 @@ int main()
                                         break;
 
                                         case 4:
-                                            if(linha<1 || linha>18 || coluna>16){  // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                                printf("\n");
+                                                printf("Linha e/ou Coluna invalida. Tente novamente.\n");
+                                            }
+                                            else if(linha<1 || linha>18 || coluna>16){  // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
@@ -607,16 +646,17 @@ int main()
                                         coluna = m;
                                     }
                                 }
-                                if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
-                                    printf("Linha e/ou Coluna invalida. Tente novamente.\n");
-                                }
                                 if(submarino==PAMAX){
                                     printf("Quantidade maxima de Porta-avioes atingida.\n"); // Limitar a quantidade.
                                 }
                                 else{
                                     switch(virar){
                                         case 1: // Opcão padrão:
-                                            if(coluna>15 || linha>18){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                                printf("\n");
+                                                printf("Linha e/ou Coluna invalida. Tente novamente.\n");
+                                            }
+                                            else if(coluna>15 || linha>18){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
@@ -640,7 +680,11 @@ int main()
                                         break;
 
                                         case 2: // Opcão rotacionar 90 graus.
-                                            if(linha>15 || coluna>18){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
+                                            if(linha>19 || coluna>19 || linha<0 || coluna<0){ // Condição para não ultrapassar a matriz.
+                                                printf("\n");
+                                                printf("Linha e/ou Coluna invalida. Tente novamente.\n");
+                                            }
+                                            else if(linha>15 || coluna>18){ // Condição que lê se o elemento pode ser impresso inteiramente na matriz.
                                                 printf("Elemento ultrapassa a matriz. Tente novamente.\n");
                                             }
                                             else{
