@@ -64,11 +64,12 @@ int main()
                     printf("\n");
 
                     for(i=0; i<TAM; i++){
-                        printf("%d",l);
-                        l++; // Imprime a primeira coluna com números de 0-19 para identificação de cada posição x.
-                        if(l<=10){
+                        if(l<10){
                             printf(" ");
                         }
+                        printf("%d",l);
+                        l++; // Imprime a primeira coluna com números de 0-19 para identificação de cada posição x.
+
                         for(j=0; j<TAM; j++){
                             printf(" ");            // Imprime a matriz.
                             printf("%c",vet[i][j]);
@@ -78,14 +79,6 @@ int main()
                     if(boia == BOMAX && aviao == AVMAX && submarino == SUMAX && espiao_1 == E1MAX && espiao_2 == E2MAX && porta_avioes == PAMAX){ // Condição de parada do loop.
                         printf("\n");
                         printf("A Frota maritima foi posicinada com sucesso!\n");
-                        printf("Total:\n");
-                        printf("Boia [%d]\n",boia);
-                        printf("Aviao [%d]\n",aviao);
-                        printf("Submarino [%d]\n",submarino);
-                        printf("Espiao 1 [%d]\n",espiao_1);
-                        printf("Espiao 2 [%d]\n",espiao_2);
-                        printf("Porta-aviao [%d]\n",porta_avioes);
-                        printf("\n");
                         printf("Jogar novamente?\n");
                         printf("[1] Sim\n");
                         printf("[2] Nao\n");
