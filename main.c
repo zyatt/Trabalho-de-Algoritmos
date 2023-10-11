@@ -103,15 +103,14 @@ int main()
                             printf("[5] Espiao 2\n");
                             printf("[6] Porta-Avioes\n");
                             printf("[7] Voltar\n"); // Volta para o menu principal (reseta o jogo).
-                            printf("[8] Finalizar o jogo\n");
-                            printf("[9] Aleatorizar\n");
+                            printf("[8] Aleatorizar\n");
+                            printf("[9] Finalizar o jogo\n");
                             scanf("%d",&opcao);
                             if(opcao==7){
                                 voltar_sair=1;       // Aqui todas as variáveis resetam para que o jogo recomece.
                                 voltar_sair2=1;
                                 boia = 0, aviao = 0, submarino = 0, espiao_1 = 0, espiao_2 = 0, porta_avioes = 0;
                             }
-
                             if(opcao<1 || opcao>9){
                                 printf("\n");
                                 printf("Opcao invalida. Tente novamente.\n");
@@ -706,11 +705,11 @@ int main()
                             }while(linha>19 || coluna > 19 || linha<0 || coluna<0);
                         break;
 
-                        case 8:
+                        case 9:
                             printf("Obrigado por jogar!\n");
                             return 0;
                             break;
-                        case 9: // Case da opção aleatorizar.
+                        case 8: // Case da opção aleatorizar.
                             do{ // Sortear boias aleatoriamente
                                 linha = rand()%20; // Sortear linha
                                 coluna = rand()%20; // Sortear coluna
