@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #define TAM 20 // Valor definido para o total de linhas e colunas.
-#define BOMAX 10
+#define BOMAX 50
 #define AVMAX 5
 #define SUMAX 5   // Valores para teste (Aumentar para 10,5,5,4,4,2 respectivamente).
 #define E1MAX 4
@@ -11,12 +11,10 @@
 
 int main()
 {
-    // Bem vindo ao meu código. Trabalho (parte 1) da disciplina de algoritmos.
-    // Tentei comentar o máximo que deu, se não estiver comentado foi porque esqueci ou não achei necessário.
-    // Ficou um pouco grande pois não sei ainda usar algumas funcionalidades da linguagem C. São 920 linhas de puro amor.
-    // Adicionei coisas a mais no código, mas os requerimentos foram cumpridos.
-    // O código não está perfeito, possui probleminhas aqui e ali que não consegui resolver (Me perdi um pouco com os laços condicionais e estruturas de repetição).
-    // A inicialização dos elementos pode parecer um pouco complicada a princípio (Recomendado ver as instruções). Tentei explicar como fazer, recomendo printar no centro da matriz para testar.
+    /// Trabalho (parte 1) da disciplina de algoritmos.
+    /// Tentei comentar o máximo que deu, se não estiver comentado foi porque esqueci ou não achei necessário.
+    /// Adicionei coisas a mais no código, mas os requerimentos foram cumpridos.
+    /// A inicialização dos elementos de forma manual pode parecer um pouco complicada a princípio (Recomendado ver as instruções). Tentei explicar como fazer, recomendo printar no centro da matriz para testar.
 
     int menu,voltar_sair,finalizar,opcao,virar,voltar_sair2 = 0,voltar_sair3 = 0;
     char matriz_menu[TAM][TAM]; // Matriz usada nas instruções.
@@ -1313,16 +1311,16 @@ int main()
                             matriz_menu[2][4] = '5';
                         }
                         if(i==0 && j==8 || i==1 && j==8 || i==2 && j==8 || i==3 && j==8 || i==4 && j==8 || i==0 && j==9 || i==1 && j==9 || i==2 && j==9 || i==3 && j==9 || i==4 && j==9){
-                            matriz_menu[0][8] = '1';
-                            matriz_menu[1][8] = '1';
-                            matriz_menu[2][8] = '1';
-                            matriz_menu[3][8] = '1';
-                            matriz_menu[4][8] = '1';
-                            matriz_menu[0][9] = '1';
-                            matriz_menu[1][9] = '1';
-                            matriz_menu[2][9] = '1';
-                            matriz_menu[3][9] = '1';
-                            matriz_menu[4][9] = '1';
+                            matriz_menu[0][8] = '5';
+                            matriz_menu[1][8] = '5';
+                            matriz_menu[2][8] = '5';
+                            matriz_menu[3][8] = '5';
+                            matriz_menu[4][8] = '5';
+                            matriz_menu[0][9] = '5';
+                            matriz_menu[1][9] = '5';
+                            matriz_menu[2][9] = '5';
+                            matriz_menu[3][9] = '5';
+                            matriz_menu[4][9] = '5';
                         }
                         printf("%c ", matriz_menu[i][j]);
                     }
